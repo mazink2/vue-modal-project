@@ -1,7 +1,7 @@
 <template>
   <h1>{{ title }}</h1>
   <br>
-  <div v-if="showModal">
+  <teleport to=".modals" v-if="showModal">
     <Modal 
       theme="sale"
       @close="toggleModal"
@@ -13,7 +13,7 @@
       <h1>Giveaway</h1>
       <p>Get stuff for half price</p>
     </Modal>
-  </div>
+  </teleport>
   <button @click="toggleModal">Open Modal</button>
 </template>
 
@@ -40,7 +40,7 @@ export default {
 </script>
 
 <style>
-#app {
+#app, .modals {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
